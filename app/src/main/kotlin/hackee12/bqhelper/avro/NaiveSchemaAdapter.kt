@@ -36,7 +36,7 @@ class NaiveSchemaAdapter : SchemaAdapter {
 
     private fun array(arrayName: String, arraySchema: Schema): TableFieldSchema {
         return when (val arrayType = arraySchema.elementType.type) {
-            Schema.Type.RECORD -> repeated(record(arrayName, arraySchema))
+            Schema.Type.RECORD -> repeated(record(arrayName, arraySchema.elementType))
             Schema.Type.STRING -> repeated(field(arrayName).setType("STRING"))
             Schema.Type.INT,
             Schema.Type.LONG -> repeated(field(arrayName).setType("INTEGER"))

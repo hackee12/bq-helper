@@ -1,0 +1,39 @@
+[
+  {
+    "name": "registryName",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "registryId",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "registryAudit",
+    "type": "STRING",
+    "mode": "REPEATED"
+  },
+  {
+    "name": "users",
+    "type": "RECORD",
+    "mode": "REPEATED",
+    "fields": [
+      {
+        "name": "userName",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "userId",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "isActive",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+      }
+    ]
+  }
+]

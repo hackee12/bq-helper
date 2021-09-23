@@ -11,9 +11,9 @@ internal class NaiveSchemaAdapterTest {
 
     @Test
     fun test() {
-        val avroSchema = Schema.Parser().parse(File("src/test/resources/user.avsc"))
-        val expected: MutableList<TableFieldSchema> = ObjectMapper().readValue(
-            File("src/test/resources/user.table.json").readText(),
+        val avroSchema = Schema.Parser().parse(File("src/test/resources/RegistryRecord.avsc"))
+        val expected: List<TableFieldSchema> = ObjectMapper().readValue(
+            File("src/test/resources/registry.table.json").readText(),
             mutableListOf<TableFieldSchema>().javaClass
         )
         val actual: List<TableFieldSchema> = NaiveSchemaAdapter().asTableFields("_ignore_", avroSchema)[0].fields

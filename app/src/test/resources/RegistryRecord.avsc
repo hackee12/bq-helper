@@ -1,0 +1,46 @@
+{
+  "namespace": "example.avro",
+  "type": "record",
+  "name": "RegistryRecord",
+  "fields": [
+    {
+      "name": "registryName",
+      "type": "string"
+    },
+    {
+      "name": "registryId",
+      "type": "int"
+    },
+    {
+      "name": "registryAudit",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "users",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "UserRecord",
+          "fields": [
+            {
+              "name": "userName",
+              "type": "string"
+            },
+            {
+              "name": "userId",
+              "type": "int"
+            },
+            {
+              "name": "isActive",
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
